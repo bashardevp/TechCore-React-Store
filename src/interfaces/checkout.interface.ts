@@ -7,7 +7,7 @@ export interface IOrderSuccessDialogProps {
 export interface CheckoutOrder {
   id: string;
   date: string;
-  status: "Shipped";
+  status: "Processing" | "Shipped" | "Delivered" | "Cancelled";
   total: number;
   items: OrderItem[];
 }

@@ -5,45 +5,51 @@ function AuthGuard() {
     isLoading,
     isAuthenticated,
     error,
-    loginWithRedirect: login,
+    loginWithRedirect,
     logout: auth0Logout,
     user,
   } = useAuth0();
 
-  if (!isAuthenticated) {
-    return null;
-  }
-
   const signup = () =>
-    login({ authorizationParams: { screen_hint: "signup" } });
+    loginWithRedirect({
+      authorizationParams: {
+        screen_hint: "signup",
+      },
+    });
 
   const logout = () =>
-    auth0Logout({ logoutParams: { returnTo: window.location.origin } });
+    auth0Logout({
+      logoutParams: {
+        returnTo: window.location.origin,
+      },
+    });
 
-  if (isLoading) return "Loading...";
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
+
+  if (error) {
+    return <p>Error: {error.message}</p>;
+  }
+
+  if (!isAuthenticated) {
+    return (
+      <>
+        <button onClick={signup}>Signup</button>
+        <button onClick={() => loginWithRedirect()}>Login</button>
+      </>
+    );
+  }
 
   return (
     <>
-      {" "}
-      return isAuthenticated ? (
-      <>
-        <p>Logged in as {user.email}</p>
+      <p>Logged in as {user?.email || "User"}</p>
 
-        <h1>User Profile</h1>
+      <h1>User Profile</h1>
 
-        <pre>{JSON.stringify(user, null, 2)}</pre>
+      <pre>{JSON.stringify(user, null, 2)}</pre>
 
-        <button onClick={logout}>Logout</button>
-      </>
-      ) : (
-      <>
-        {error && <p>Error: {error.message}</p>}
-
-        <button onClick={signup}>Signup</button>
-
-        <button onClick={login}>Login</button>
-      </>
-      );
+      <button onClick={logout}>Logout</button>
     </>
   );
 }
