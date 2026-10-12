@@ -84,8 +84,8 @@ function ProductImageSection({ product }: IProductImageSectionProps) {
             size="small"
             sx={{
               position: "absolute",
-              top: { xs: 8, sm: 20 },
-              right: { xs: 8, sm: 20 },
+              top: { xs: 18, sm: 20 },
+              right: { xxs: 20, xs: 30, sm: 20 },
               zIndex: 2,
               bgcolor: "rgba(255, 255, 255, 0.9)",
               backdropFilter: "blur(8px)",
