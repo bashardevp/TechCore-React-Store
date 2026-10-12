@@ -6,7 +6,8 @@ A modern storefront built with React, TypeScript, Vite, and Material UI. This pr
 
 **Live:** [Click Here](https://tech-core-react.vercel.app/)
 
-![](./home.png)
+![Home Page](public/images/home.png)
+
 
 ## Features
 
