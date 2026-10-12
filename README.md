@@ -2,6 +2,12 @@
 
 A modern storefront built with React, TypeScript, Vite, and Material UI. This project includes a home page with featured products, category browsing, product details, cart management, checkout flow, and order tracking.
 
+## Website
+
+**Live:** [Click Here](https://tech-core-react.vercel.app/)
+
+![](./home.png)
+
 ## Features
 
 - Responsive home page with hero banner, product collections, and category browsing

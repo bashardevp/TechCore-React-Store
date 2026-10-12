@@ -45,8 +45,8 @@ function ProductImageSection({ product }: IProductImageSectionProps) {
           <Box
             sx={{
               position: "absolute",
-              top: { xs: 8, sm: 20 },
-              left: { xs: 8, sm: 22 },
+              top: { xs: 20, sm: 20, md: 25 },
+              left: { xs: 25, sm: 28, md: 30 },
               zIndex: 2,
               display: "flex",
               gap: 1,

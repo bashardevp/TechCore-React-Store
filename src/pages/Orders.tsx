@@ -77,8 +77,10 @@ function Orders() {
           <Stack
             direction={{ xs: "column", md: "row" }}
             spacing={2}
-            sx={{alignItems: { xs: "stretch", md: "center" }, justifyContent: "space-between" }}
-
+            sx={{
+              alignItems: { xs: "stretch", md: "center" },
+              justifyContent: "space-between",
+            }}
           >
             <TextField
               fullWidth
@@ -98,7 +100,11 @@ function Orders() {
                 "& .MuiOutlinedInput-root": { borderRadius: "12px" },
               }}
             />
-            <Stack direction="row" spacing={1} sx={{ flexWrap: "wrap" }}>
+            <Stack
+              direction="row"
+              spacing={1}
+              sx={{ flexWrap: "wrap", gap: 2 }}
+            >
               {(
                 [
                   "All",
@@ -237,7 +243,10 @@ function Orders() {
                 <Stack
                   direction={{ xs: "column", sm: "row" }}
                   spacing={2}
-                  sx={{justifyContent: "space-between", alignItems: { xs: "flex-start", sm: "center" } }}
+                  sx={{
+                    justifyContent: "space-between",
+                    alignItems: { xs: "flex-start", sm: "center" },
+                  }}
                 >
                   <Typography variant="body2" sx={{ color: "#64748b" }}>
                     {order.items.reduce((s, i) => s + i.quantity, 0)} item(s)
